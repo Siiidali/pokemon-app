@@ -4,11 +4,9 @@ const Categorie = require("../models/categorieModel");
 const getAllCategories = async (req, res) => {
   try {
     const categories = await Categorie.find();
-    if (categories) {
-      return res.status(200).json(categories);
-    } else {
-      return res.status(404).json({ message: "No categories found" });
-    }
+    if (categories) return res.status(200).json(categories);
+
+    res.status(404).json({ message: "No categories found" });
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
@@ -16,8 +14,8 @@ const getAllCategories = async (req, res) => {
 
 // get one category
 const getOneCategorie = async (req, res) => {
+  const { id } = req.params;
   try {
-    const { id } = req.params;
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return res.status(404).json({ message: "No such category" });
     }
@@ -49,10 +47,10 @@ const addCategorie = async (req, res) => {
 // update a category
 const updateCategorie = async (req, res) => {
   const { id } = req.params;
+  const { name } = req.body;
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(404).json({ message: "No such category" });
   }
-  const { name } = req.body;
   if (!name) {
     return res.status(400).json({ message: "Please provide a name" });
   }
@@ -85,7 +83,7 @@ const deleteCategorie = async (req, res) => {
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
-};
+}
 
 module.exports = {
   deleteCategorie,
