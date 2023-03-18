@@ -1,17 +1,21 @@
 const express = require("express");
+const cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
 // import routes
-
 const categorieRoutes = require("./routes/categorieRoutes");
 const pokemonRoutes = require("./routes/pokemonRoutes");
 
 // create an express app
 const app = express();
 
+
 // middlewares
 app.use(express.json());
+app.use(cors({
+  origin: ["http://localhost:5173"]
+}))
 
 // routes
 app.use("/api/categories", categorieRoutes);

@@ -8,11 +8,9 @@ const mongoose = require("mongoose");
 const getAllPokemons = async (req, res) => {
   try {
     const pokemons = await Pokemon.find();
-    if (pokemons) {
-      return res.status(200).json(pokemons);
-    } else {
-      return res.status(404).json({ message: "No pokemons found" });
-    }
+    if (pokemons) return res.status(200).json(pokemons);
+
+    res.status(404).json({ message: "No pokemons found" });
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
@@ -21,11 +19,11 @@ const getAllPokemons = async (req, res) => {
 // get one pokemon
 
 const getOnePokemon = async (req, res) => {
+  const { id } = req.params;
   try {
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return res.status(404).json({ message: "No such a pokemon" });
     }
-    const { id } = req.params;
     const pokemon = await Pokemon.findById(id);
     return res.status(200).json(pokemon);
   } catch (error) {
@@ -47,9 +45,7 @@ const addPokemon = async (req, res) => {
   if (!defence) emptyFields.push("defence");
   if (!categories && categories.length == 0) emptyFields.push("categories");
   if (emptyFields.length > 0) {
-    return res
-      .status(400)
-      .json({ message: "Please fill in all the fields", emptyFields });
+    return res.status(400).json({ message: "Please fill in all the fields", emptyFields });
   }
   try {
     const pokemon = {
@@ -61,10 +57,8 @@ const addPokemon = async (req, res) => {
       categories,
     };
     const newPokemon = await Pokemon.create(pokemon);
-    return res
-      .status(201)
-      .json({ message: "Pokemon added successfully", newPokemon });
-  } catch {
+    return res.status(201).json({ message: "Pokemon added successfully", newPokemon });
+  } catch (error) {
     return res.status(500).json({ message: error.message });
   }
 };
@@ -77,7 +71,7 @@ const updatePokemon = async (req, res) => {
     return res.status(404).json({ error: "No such workout" });
   }
 
-  const { name, avatar, speed, attack, defence, categorie } = req.body;
+  const { name, avatar, speed, attack, defence, categories } = req.body;
   // PS :  categorie is an array of categorie ids ;
 
   const pokemon = {
