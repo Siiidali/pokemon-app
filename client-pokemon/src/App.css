@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+}
+
+.App {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav {
+    margin-top: 20px;
+    width: 90%;
+    background-color: #546071;
+    display: flex;
+    border-radius: 20px;
+    align-items: center;
+    gap: 10%;
+    padding: 15px 40px;
+    justify-content: space-between;
+}
+
+nav>div:last-child {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #ed8815;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+nav>div:last-child>img {
+    width: 30px;
+}
+
+nav>a {
+    color: white;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5%;
+    min-height: 100vh;
+    width: 100%;
+}
+
+main>h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-top: 90px;
+    color: #f8f32b;
+    text-align: center;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: #728094;
+    width: 100%;
+    padding: 20px;
+}

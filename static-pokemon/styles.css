@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+.wrapper {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	gap: 20px;
+}
+
+nav {
+	margin-top: 20px;
+	width: 90%;
+	background-color: #b4cdf6;
+	display: flex;
+	border-radius: 20px;
+	align-items: center;
+	gap: 10%;
+	padding: 15px;
+	justify-content: space-between;
+}
+
+.midNav {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+nav > div:last-child {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 5%;
+	width: 100%;
+}
+
+.heroSection {
+	position: relative;
+	display: flex;
+	width: 85%;
+	background: rgba(180, 205, 246, 0.4);
+	border-radius: 20px;
+	justify-content: space-around;
+	padding: 25px 50px;
+	min-height: 350px;
+}
+
+.girafe {
+	position: absolute;
+	top: -50px;
+	right: -89px;
+}
+
+.heroSection > div > img {
+	width: 80%;
+}
+
+.heroContainerImg {
+	background: rgba(90, 148, 197, 0.5);
+	border: 1px solid #5a94c5;
+	border-radius: 20px;
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.heroSection > div:last-child {
+	width: 70%;
+	display: flex;
+	margin: 0 20px;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.heroSection > div:last-child h1 {
+	font-size: clamp(2rem, 5vw, 3.5rem);
+	font-weight: 700;
+	margin-top: 25px;
+}
+
+.heroSection > div:last-child p {
+	max-width: 500px;
+}
+
+main > h1 {
+	font-size: 4rem;
+	font-weight: 700;
+	margin-top: 90px;
+	color: #f8f32b;
+	text-align: center;
+}
+
+.PokemonsContainer {
+	display: grid;
+	width: 90%;
+	gap: 20px;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	align-items: center;
+}
+
+.PokemonsContainer > div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px;
+}
+
+.PokemonsContainer > div > div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: rgba(180, 205, 246, 0.5);
+	border: 1px solid #5a94c5;
+	border-radius: 20px;
+	width: 200px;
+	padding: 45px;
+}
+
+.PokemonsContainer > div > div > img {
+	height: 100px;
+}
+
+.PokemonsContainer h3 {
+	font-weight: 600;
+	margin: 10px 0;
+}
+
+.PokemonsContainer h3:hover {
+	color: #f8f32b;
+	cursor: pointer;
+}
+
+footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	background-color: #8797af;
+	width: 100%;
+	padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+	.heroSection {
+		flex-direction: column;
+		align-items: center;
+		width: 65%;
+	}
+}
