@@ -32,7 +32,7 @@ mongoose
     console.log("Connected to database");
 
     // listin to requests
-    app.listen(process.env.PORT || 3000, () => {
+    app.listen(process.env.PORT || 5000, () => {
       console.log(`listining to requests on port ${process.env.PORT || 3000}`);
     });
   })

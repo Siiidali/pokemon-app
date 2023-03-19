@@ -7,7 +7,6 @@ export default function Pokemon() {
 	const { id } = useParams()
 	const [pokemon, setPokemon] = useState()
 	const [loading, setLoading] = useState(true)
-	console.log(pokemon)
 
 	useEffect(() => {
 		fetch(`https://pokemons-9g2q.onrender.com/api/pokemons/${id}`)
@@ -66,8 +65,8 @@ export default function Pokemon() {
 						<div>
 							<h2>Categories</h2>
 							<div>
-								{pokemon.categories.map((category) => (
-									<Badge type="warning" scale={4}>
+								{pokemon.categories.map((category, i) => (
+									<Badge key={i} type="warning" scale={4}>
 										{category.name}
 									</Badge>
 								))}
