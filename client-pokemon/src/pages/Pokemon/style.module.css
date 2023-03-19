@@ -1,43 +1,88 @@
 .container {
-    min-height: 100vh;
+	min-height: 100vh;
+	width: 90%;
 }
 
 .innerContainer {
-    display: flex;
-    gap: 20px;
-    width: 100%;
-    padding: 10px 50px;
-    align-items: center;
+	display: flex;
+	gap: 20px;
+	height: 70vh;
+	min-height: 600px;
+	width: 100%;
+	padding: 10px 0;
+	align-items: center;
 }
 
-.innerContainer>div:first-child {
-    background: rgba(180, 205, 246, 0.5);
-    border: 1px solid #5a94c5;
-    border-radius: 20px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.innerContainer > div:first-child {
+	background: rgba(180, 205, 246, 0.5);
+	border: 1px solid #5a94c5;
+	border-radius: 20px;
+	flex: 1;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
-.innerContainer>div:first-child h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 700;
-    margin-top: 25px;
+.innerContainer > div:first-child h1 {
+	font-size: clamp(2rem, 5vw, 3.5rem);
+	font-weight: 700;
+	margin-top: 25px;
 }
 
-.innerContainer>div:first-child img {
-    width: 50vw;
-    max-width: 600px;
-    margin: 20px;
+.innerContainer > div:first-child img {
+	width: 40vw;
+	max-width: 450px;
+	margin: 20px;
 }
 
-.innerContainer>div:last-child {
-    background: rgba(180, 205, 246, 0.5);
-    border: 1px solid #5a94c5;
-    border-radius: 20px;
-    flex: 3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.innerContainer > div:last-child {
+	background: rgba(180, 205, 246, 0.5);
+	border: 1px solid #5a94c5;
+	border-radius: 20px;
+	flex: 3;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.innerContainer label {
+	font-size: 1.2rem;
+	font-weight: 700;
+}
+
+.info {
+	width: 100%;
+	padding: 0 20px;
+}
+
+.info > div {
+	width: 100%;
+}
+
+.info h2 {
+	font-size: 3rem;
+	font-weight: 700;
+	margin: 10px 30px;
+}
+
+.info div:first-child > div {
+	display: flex;
+	flex-direction: column;
+	padding: 0 10px;
+	margin: 50px 0 0 0;
+	gap: 10px;
+	align-items: center;
+}
+
+.info > div:last-child > div {
+	display: flex;
+	gap: 10px;
+}
+
+.info :first-child > div > input {
+	padding: 0 10px;
+	flex: auto;
+	width: 100%;
 }

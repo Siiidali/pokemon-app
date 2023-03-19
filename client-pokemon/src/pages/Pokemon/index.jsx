@@ -1,3 +1,4 @@
+import { Badge, Slider } from "@geist-ui/core"
 import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import classes from "./style.module.css"
@@ -28,7 +29,51 @@ export default function Pokemon() {
 						<img src={pokemon.avatar} alt="" />
 						<p>{pokemon.description}</p>
 					</div>
-					<div></div>
+					<div className={classes.info}>
+						<div>
+							<h2>Stats</h2>
+							<div>
+								<label for="attack">Attack {pokemon.attack}</label>
+								<Slider
+									min="1"
+									max="100"
+									type="success"
+									value={pokemon.attack}
+									name="attack"
+								/>
+							</div>
+							<div>
+								<label for="attack"> Defense {pokemon.defence}</label>
+								<Slider
+									type="success"
+									min="1"
+									max="100"
+									value={pokemon.defence}
+									name="attack"
+								/>
+							</div>
+							<div>
+								<label for="attack">Speed {pokemon.speed}</label>
+								<Slider
+									type="success"
+									min="1"
+									max="100"
+									value={pokemon.speed}
+									name="attack"
+								/>
+							</div>
+						</div>
+						<div>
+							<h2>Categories</h2>
+							<div>
+								{pokemon.categories.map((category) => (
+									<Badge type="warning" scale={4}>
+										{category.name}
+									</Badge>
+								))}
+							</div>
+						</div>
+					</div>
 				</div>
 			)}
 		</div>

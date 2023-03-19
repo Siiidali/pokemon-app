@@ -1,4 +1,5 @@
 import { useRoutes } from "react-router-dom"
+import AddPokemon from "./pages/AddPokemon"
 import Home from "./pages/Home"
 import Pokemon from "./pages/Pokemon"
 
@@ -16,9 +17,9 @@ export default function Router() {
 			path: "/pokemons/:id",
 			element: <Pokemon />,
 		},
-		// {
-		// 	path: "/addPokemon",
-		// 	element: <AddPokemon />,
-		// },
+		{
+			path: "/addPokemon",
+			element: <AddPokemon />,
+		},
 	])
 }
