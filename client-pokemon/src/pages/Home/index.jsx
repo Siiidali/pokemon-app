@@ -20,9 +20,9 @@ export default function Home() {
 	return (
 		<main>
 			<div className={classes.heroSection}>
-				<img className={classes.girafe} src="./images/girafe.png" alt="" />
+				<img className={classes.girafe} src="/images/girafe.png" alt="" />
 				<div className={classes.heroContainerImg}>
-					<img src="./images/carapuce.png" alt="" />
+					<img src="/images/carapuce.png" alt="" />
 				</div>
 				<div>
 					<h1>Welcome To Your Pokemon Shop !</h1>
