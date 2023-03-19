@@ -8,9 +8,7 @@ export default function Home() {
 
 	useEffect(() => {
 		const fetchPokemons = async () => {
-			const response = await fetch(
-				"https://pokemons-9g2q.onrender.com/api/pokemons",
-			)
+			const response = await fetch("http://localhost:5000/api/pokemons")
 			const data = await response.json()
 			setIsLoading(false)
 			setPokemons(data)

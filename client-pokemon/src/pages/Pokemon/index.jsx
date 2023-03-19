@@ -9,7 +9,7 @@ export default function Pokemon() {
 	const [loading, setLoading] = useState(true)
 
 	useEffect(() => {
-		fetch(`https://pokemons-9g2q.onrender.com/api/pokemons/${id}`)
+		fetch(`http://localhost:5000/api/pokemons/${id}`)
 			.then((response) => response.json())
 			.then((data) => {
 				setPokemon(data)

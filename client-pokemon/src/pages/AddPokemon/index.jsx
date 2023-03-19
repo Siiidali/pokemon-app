@@ -11,7 +11,7 @@ export default function AddPokemon() {
 		const data = Object.fromEntries(form)
 		data.categories = categories
 
-		fetch("https://pokemons-9g2q.onrender.com/api/pokemons", {
+		fetch("http://localhost:5000/api/pokemons", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -24,9 +24,7 @@ export default function AddPokemon() {
 	}
 	useEffect(() => {
 		const fetchCategories = async () => {
-			const response = await fetch(
-				"https://pokemons-9g2q.onrender.com/api/categories",
-			)
+			const response = await fetch("http://localhost:5000/api/categories")
 			const data = await response.json()
 			setCategories(data)
 		}
